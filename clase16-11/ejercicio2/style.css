@@ -39,9 +39,9 @@ input::placeholder {
     text-transform: uppercase;
 }
 
-.btnCrear {
+.btnCrear, .btnMostrar {
     margin-top: 10px;
-    padding: 0px 100px;
+    padding: 0px 50px;
     border: solid 2px #fff;
     border-radius: 10px;
     background-color: #ff0000;
@@ -49,11 +49,15 @@ input::placeholder {
     font-size: 25px;
 }
 
-.btnCrear:hover{
+.btnCrear:hover, .btnMostrar:hover {
     background-color: #1e00ff;
 }
 
 .caja {
     display: flex;
     flex-flow: row wrap;
+}
+
+.hide {
+    display: none;
 }
