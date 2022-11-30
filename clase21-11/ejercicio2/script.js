@@ -1,66 +1,114 @@
-let btn1 = document.querySelector('.btn-1');
-btn1.addEventListener('click', () => {
-    btn1.value = 1;
-});
-
-let btn2 = document.querySelector('.btn-2');
-btn2.value = 2;
-
-let btn3 = document.querySelector('.btn-3');
-btn3.value = 3;
-
-let btnSuma = document.querySelector('.btn-suma');
-btnSuma.value = '+';
-
-let btn4 = document.querySelector('.btn-4');
-btn4.value = 4;
-
-let btn5 = document.querySelector('.btn-5');
-btn5.value = 5;
-
-let btn6 = document.querySelector('.btn-6');
-btn6.value = 6;
-
-let btnResta = document.querySelector('.btn-resta');
-btnResta.value = '-';
-
-let btn7 = document.querySelector('.btn-7');
-btn7.value = 7;
-
-let btn8 = document.querySelector('.btn-8');
-btn8.value = 8;
-
-let btn9 = document.querySelector('.btn-9');
-btn9.value = 9;
-
-let btnMultiplicar = document.querySelector('.btn-multiplicar');
-btnMultiplicar.value = '*';
-
-let btn0 = document.querySelector('.btn-0');
-btn0.value = 0;
-
-let btnPunto = document.querySelector('.btn-punto');
-btnPunto.value = '.';
-
-let btnBorrar = document.querySelector('.btn-borrar');
-btnBorrar.value = '';
-
-let btnDividir = document.querySelector('.btn-dividir');
-btnDividir.value = '/';
-
-let btnIgual = document.querySelector('.btn-igual');
-btnIgual.value = '=';
-
 let visor = document.querySelector('.visor');
+let btn1 = document.querySelector('.btn-1');
+let btn2 = document.querySelector('.btn-2');
+let btn3 = document.querySelector('.btn-3');
+let btn4 = document.querySelector('.btn-4');
+let btn5 = document.querySelector('.btn-5');
+let btn6 = document.querySelector('.btn-6');
+let btn7 = document.querySelector('.btn-7');
+let btn8 = document.querySelector('.btn-8');
+let btn9 = document.querySelector('.btn-9');
+let btn0 = document.querySelector('.btn-0');
+let btnBorrar = document.querySelector('.btn-borrar');
+let btnSuma = document.querySelector('.btn-suma');
+let btnResta = document.querySelector('.btn-resta');
+let btnMultiplicar = document.querySelector('.btn-multiplicar');
+let btnDividir = document.querySelector('.btn-dividir');
+let btnIgual = document.querySelector('.btn-igual');
+let btnPunto = document.querySelector('.btn-punto');
 
-function sumar()
+let operandoA = 0;
+let operandoB = 0;
+let operacion = 0;
 
-function restar()
+btn1.onclick = function(e) {
+    visor.textContent = visor.textContent + "1";
+};
+btn2.onclick = function(e) {
+    visor.textContent = visor.textContent + "2";
+};
+btn3.onclick = function(e) {
+    visor.textContent = visor.textContent + "3";
+};
+btn4.onclick = function(e) {
+    visor.textContent = visor.textContent + "4";
+};
+btn5.onclick = function(e) {
+    visor.textContent = visor.textContent + "5";
+};
+btn6.onclick = function(e) {
+    visor.textContent = visor.textContent + "6";
+};
+btn7.onclick = function(e) {
+    visor.textContent = visor.textContent + "7";
+};
+btn8.onclick = function(e) {
+    visor.textContent = visor.textContent + "8";
+};
+btn9.onclick = function(e) {
+    visor.textContent = visor.textContent + "9";
+};
+btn0.onclick = function(e) {
+    visor.textContent = visor.textContent + "0";
+};
+btnPunto.onclick = function(e) {
+    visor.textContent = visor.textContent + ".";
+};
+btnBorrar.onclick = function(e) {
+    resetear();
+};
+btnSuma.onclick = function(e) {
+    operandoA = visor.textContent;
+    operacion = "+";
+    limpiar();
+};
+btnResta.onclick = function(e) {
+    operandoA = visor.textContent;
+    operacion = "-";
+    limpiar();
+};
+btnMultiplicar.onclick = function(e) {
+    operandoA = visor.textContent;
+    operacion = "*";
+    limpiar();
+};
+btnDividir.onclick = function(e) {
+    operandoA = visor.textContent;
+    operacion = "/";
+    limpiar();
+};
+btnIgual.onclick = function(e) {
+    operandoB = visor.textContent;
+    resolver();
+};
 
-function multiplicar()
+function resetear() {
+    visor.textContent = "";
+    operandoA = 0;
+    operandoB = 0;
+    operacion = "";
+}
 
-function dividir()
+function limpiar() {
+    visor.textContent = "";
+}
 
-function clear()
-
-btnBorrar.addEventListener('click', clear);
+function resolver() {
+    let res = 0;
+    switch (operacion) {
+        case "+":
+            res = parseFloat(operandoA) + parseFloat(operandoB);
+            break;
+        case "-":
+            res = parseFloat(operandoA) - parseFloat(operandoB);
+            break;
+        case "*":
+            res = parseFloat(operandoA) * parseFloat(operandoB);
+            break;
+        case "/":
+            res = parseFloat(operandoA) / parseFloat(operandoB);
+            break;
+    }
+    resetear();
+    visor.textContent = res;
+}
