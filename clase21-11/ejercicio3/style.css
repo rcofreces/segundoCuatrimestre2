@@ -1,0 +1,10 @@
+.container {
+    width: 600px;
+    height: 100px;
+    margin: auto;
+    background-color: blue;
+}
+
+input {
+    width: 200px;
+}

@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(86, 86, 86);
+}
+
+button {
+    font-size: 40px;
+    border: transparent
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(6, 80px);
+    grid-gap: 10px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    width: 350px;
+    height: 530px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgb(59, 58, 58);
+}
+
+.visor {
+    grid-column: span 4;
+    font-weight: 700;
+    border: 1px solid;
+    background-color: white;
+}
+
+.btn-igual {
+    grid-column: span 4;
+}
+
+.btn-multiplicar, .btn-dividir, .btn-suma, .btn-resta, .btn-igual {
+    background-color: fuchsia;
+}
+
+.btn-0, .btn-punto, .btn-borrar, .btn-1, .btn-2, .btn-3, .btn-4, .btn-5, .btn-6, .btn-7, .btn-8, .btn-9 {
+    background-color: #bbb;
+}
