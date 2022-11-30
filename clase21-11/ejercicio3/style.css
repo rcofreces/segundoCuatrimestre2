@@ -1,10 +1,46 @@
+body {
+    background-color: rgb(220, 220, 220);
+}
+
 .container {
-    width: 600px;
-    height: 100px;
+    display: flex;
+    width: 1010px;
+    height: 30px;
     margin: auto;
-    background-color: blue;
+
+}
+
+label {
+    display: flex;
+    align-items: center;
 }
 
 input {
-    width: 200px;
+    width: 100px;
+    margin: 0px 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+button {
+    width: 100px;
+    color: white;
+    background-color: black;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.cajas {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 20px auto;
+    width: 1000px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 5px solid red;
+    background-color: blue;
+    margin: 5px;
 }
