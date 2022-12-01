@@ -11,13 +11,21 @@ function crearDiv() {
     div.appendChild(caja);
 }
 
-function animacion() {
-    for (let i = 0; i < inputCajas.value; i++) {
-        setTimeout(() => {  // setInterval
+function animacion() {  
+    if (inputCajas.value < 1 || inputCajas.value == "" || inputTiempo.value == "") {
+        alert('Ingrese valores validos en los inputs');
+    } else {
+        let i = 0;
+        let interval = setInterval(() => {
             crearDiv();
+            i++;
+            if (i == inputCajas.value) {
+                inputCajas.value = "";
+                inputTiempo.value = "";
+                clearInterval(interval);
+            }
         }, inputTiempo.value * 1000);
     }
-    clearInterval();
 }
 
 function borrar() {
