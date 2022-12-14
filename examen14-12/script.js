@@ -11,19 +11,31 @@ fetch("https://6393e57e11ed187986bf9667.mockapi.io/api/curso/employees")
             let tdCity = document.createElement('td');
             let tdBirthday = document.createElement('td');
             let tdEmail = document.createElement('td');
+            let tdEdit = document.createElement('td');
+            let tdDelete = document.createElement('td');
+            
+            let editBtn = document.createElement('a');
+            editBtn.classList.add('bi', 'bi-pencil-fill');
+
+            let deleteBtn = document.createElement('a');
+            deleteBtn.classList.add('bi', 'bi-trash-fill');
         
             thID.innerText = data[i].id;
             tdName.innerText = data[i].name;
             tdCity.innerText = data[i].city;
             tdBirthday.innerText = data[i].birthday;
             tdEmail.innerText = data[i].email;
-        
+            
             tbody.appendChild(tr);
             tr.appendChild(thID);
             tr.appendChild(tdName);
             tr.appendChild(tdCity);
             tr.appendChild(tdBirthday);
             tr.appendChild(tdEmail);
+            tr.appendChild(tdEdit);
+            tdEdit.appendChild(editBtn);
+            tr.appendChild(tdDelete);
+            tdDelete.appendChild(deleteBtn);
         }
     })
-    .catch(err => console.log('Hubo un problema con la petición Fetch:' + err.message))
+    .catch(err => console.log('Hubo un problema con la petición Fetch:' + err.message));
