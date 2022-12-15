@@ -16,7 +16,7 @@
     </header>
     <section class="container">
         <table class="table table-striped table-hover table-sm table-primary">
-            <thead class="table-dark">
+            <thead class="table-dark fs-5">
                 <tr>
                     <th id="id"># ID</th>
                     <th id="name">Name</th>
@@ -24,7 +24,7 @@
                     <th id="birthday">Birthday</th>
                     <th id="email">Email</th>
                     <th id="edit"></th>
-                    <th id="delete"><button type="button" class="btn btn-outline-light bi bi-person-plus-fill" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                    <th id="delete"><button type="button" class="btn btn-outline-light bi bi-person-plus-fill" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="emptyModal()"></button>
                 </tr>
             </thead>
             <tbody class="table-group-divider" id="tableBody">
@@ -62,13 +62,12 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" aria-label="Close" onclick="addUser()">Save Changes</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" aria-label="Close" onclick="saveUser()">Save Changes</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

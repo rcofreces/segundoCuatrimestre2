@@ -41,8 +41,13 @@ function downloadData(data){
     }
 }
 
+function deleteUser(id) {
+    let deleteUser = document.getElementById('id' + id).remove();
+}
+
 function editUser(id, name, city, birthday, email) {
     let inputID = document.getElementById('inputID');
+    inputID.classList.add('userNotNew');
     inputID.value = id;
 
     let inputName = document.getElementById('inputName');
@@ -58,8 +63,45 @@ function editUser(id, name, city, birthday, email) {
     inputEmail.value = email;
 }
 
-function deleteUser(id) {
-    let deleteUser = document.getElementById('id' + id).remove();
+function saveUser() {
+    let inputID = document.getElementById('inputID');
+    let inputName = document.getElementById('inputName');
+    let inputCity = document.getElementById('inputCity');
+    let inputBirthday = document.getElementById('inputBirthday');
+    let inputEmail = document.getElementById('inputEmail');
+    let tr = document.getElementById('id' + inputID.value);
+
+    if (inputID.classList.contains('userNotNew')) {
+        let id = tr.firstElementChild;
+        id.nextElementSibling.innerText = inputName.value;
+
+        let name= id.nextElementSibling;
+        name.nextElementSibling.innerText = inputCity.value;
+    
+        let city = name.nextElementSibling;
+        city.nextElementSibling.innerText = inputBirthday.value;
+        
+        let birthday = city.nextElementSibling;
+        birthday.nextElementSibling.innerText = inputEmail.value;
+
+        inputID.classList.remove('userNotNew');
+    } else {
+        addUser();
+    }
+}
+
+function emptyModal() {
+    let ID = document.getElementById('inputID');
+    let name = document.getElementById('inputName');
+    let city = document.getElementById('inputCity');
+    let birthday = document.getElementById('inputBirthday');
+    let email = document.getElementById('inputEmail');
+    
+    ID.value = "";
+    name.value = "";
+    city.value = "";
+    birthday.value = "";
+    email.value = "";
 }
 
 function addUser(){
@@ -75,7 +117,6 @@ function addUser(){
     let tbody = document.getElementById('tableBody');
     
     let newID = parseInt(tbody.lastChild.innerText) + 1;
-    console.log(newID);
     thID.innerText = newID;
 
     let newName = document.getElementById('inputName');
@@ -103,9 +144,4 @@ function addUser(){
     tr.appendChild(tdEmail);
     tr.appendChild(tdEdit);
     tr.appendChild(tdDelete);
-
-    newName.value = "";
-    newCity.value = "";
-    newBirthday.value = "";
-    newEmail.value = "";
 }
